@@ -25,22 +25,22 @@ class Player:
         res = 0
         if (time>24 and time<32):
             if self.prices["purchase"][time-1] < 0.078:
-                res= +13
+                res= +10
             else :
                 res= +3 
         elif (time>11 and time<44):
             if self.prices["purchase"][time-1] < 0.06:
                 res= 10
             else :
-                res= -20                    
+                res= -23                    
         else :
             res= +10
         if (self.penalty[time-1]>0.6):
-            res+=-10
+            res+=-12
         if (self.penalty[time-1]<0.6):
-            res+=+10
+            res+=+7
             if (self.battery_stock[time-1]<10):
-                res+=10
+                res+=8
         return res
     def update_battery_stock(self,time,load):
         
